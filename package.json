@@ -1,0 +1,32 @@
+{
+  "name": "node-snowshoe",
+  "version": "0.0.1",
+  "description": "A real NodeJS SDK for snowshoe stamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xzela/node-snowshoe.git"
+  },
+  "keywords": [
+    "snowshoe",
+    "sdk",
+    "nodejs",
+    "snowshoe-stamp"
+  ],
+  "author": "Zeph LaFassett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xzela/node-snowshoe/issues"
+  },
+  "homepage": "https://github.com/xzela/node-snowshoe",
+  "dependencies": {
+    "request": "2.36.x"
+  },
+  "devDependencies": {
+    "mocha": "1.19.x",
+    "should": "3.3.x"
+  }
+}
