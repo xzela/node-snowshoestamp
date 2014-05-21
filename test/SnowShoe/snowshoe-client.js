@@ -24,14 +24,14 @@ describe('SnowShoe Client Unit Tests ', function () {
 
 		it('should have the default base URL if no options are supplied', function (done) {
 			var shoe = new SnowShoe('FakeKey', 'FakeSecret');
-			shoe.rootUrl.should.equal('https://beta.snowshoestamp.com/api/v2');
+			shoe.url.should.equal('https://beta.snowshoestamp.com/api/v2');
 			done();
 		});
 
 		it('should respect a custom base user if supplied', function (done) {
 			var url = 'http://www.google.com';
-			var shoe = new SnowShoe('FakeKey', 'FakeSecret', {rootUrl: url});
-			shoe.rootUrl.should.equal(url);
+			var shoe = new SnowShoe('FakeKey', 'FakeSecret', {url: url});
+			shoe.url.should.equal(url);
 			done();
 		});
 
