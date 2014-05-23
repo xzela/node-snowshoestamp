@@ -15,7 +15,7 @@ describe('SnowShoe Client Unit Tests ', function () {
 			done();
 		});
 
-		it('should thrown an error if no API secret is supplied', function (done) {
+		it('should thrown an error if no APP_SECRET option is supplied', function (done) {
 			(function () {
 				var options = {
 					API_KEY: 'FAKE_KEY'
@@ -25,24 +25,25 @@ describe('SnowShoe Client Unit Tests ', function () {
 			done();
 		});
 
-		it('should have the default base URL if no options are supplied', function (done) {
+		it('should have the default base URL if no url options is supplied', function (done) {
 			var options = {
 				API_KEY: 'FAKE_KEY',
-				API_SECRET: 'FAKE_SECRET'
+				APP_SECRET: 'FAKE_SECRET'
 			};
 			var shoe = new SnowShoe(options);
 			shoe.url.should.equal('https://beta.snowshoestamp.com/api/v2');
 			done();
 		});
 
-		it('should respect a custom base user if supplied', function (done) {
-			var options = {
+		it('should respect a custom url if supplied', function (done) {
+			var url = 'http://www.google.com',
+				options = {
 				API_KEY: 'FAKE_KEY',
-				API_SECRET: 'FAKE_SECRET',
-				url: 'http://www.google.com'
+				APP_SECRET: 'FAKE_SECRET',
+				url: url
 			};
 			var shoe = new SnowShoe(options);
-			shoe.url.should.equal(options.url);
+			shoe.url.should.equal(url);
 			done();
 		});
 

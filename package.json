@@ -1,7 +1,7 @@
 {
   "name": "node-snowshoe",
   "version": "0.0.1",
-  "description": "A real NodeJS SDK for snowshoe stamp",
+  "description": "A real NodeJS library for snowshoe stamp",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
