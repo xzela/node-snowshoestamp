@@ -1,4 +1,4 @@
-node-snowshoe
+node-snowshoestamp
 =============
 
-A real NodeJS SDK for SnowShoe
+A real NodeJS library for SnowShoeStamp
