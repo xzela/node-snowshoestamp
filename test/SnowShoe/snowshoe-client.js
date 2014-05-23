@@ -10,7 +10,7 @@ describe('SnowShoe Client Unit Tests ', function () {
 
 		it('should thrown an error if no API key is supplied', function (done) {
 			(function () {
-				var shoe = new SnowShoe();
+				var shoe = SnowShoe();
 			}).should.throw();
 			done();
 		});
@@ -20,7 +20,7 @@ describe('SnowShoe Client Unit Tests ', function () {
 				var options = {
 					API_KEY: 'FAKE_KEY'
 				};
-				var shoe = new SnowShoe(options);
+				var shoe = SnowShoe(options);
 			}).should.throw();
 			done();
 		});
@@ -30,20 +30,41 @@ describe('SnowShoe Client Unit Tests ', function () {
 				API_KEY: 'FAKE_KEY',
 				APP_SECRET: 'FAKE_SECRET'
 			};
-			var shoe = new SnowShoe(options);
-			shoe.url.should.equal('https://beta.snowshoestamp.com/api/v2');
+			var shoe = SnowShoe(options);
+			shoe.apiUrl.should.equal('https://beta.snowshoestamp.com/api/v2');
 			done();
 		});
 
-		it('should respect a custom url if supplied', function (done) {
+		it('should respect a custom apiUrl if supplied', function (done) {
 			var url = 'http://www.google.com',
 				options = {
 				API_KEY: 'FAKE_KEY',
 				APP_SECRET: 'FAKE_SECRET',
-				url: url
+				apiUrl: url
 			};
-			var shoe = new SnowShoe(options);
-			shoe.url.should.equal(url);
+			var shoe = SnowShoe(options);
+			shoe.apiUrl.should.equal(url);
+			done();
+		});
+
+		it('the debug callback url should be available if debugging is enabled', function (done) {
+			var options = {
+				API_KEY: 'FAKE_KEY',
+				APP_SECRET: 'FAKE_SECRET',
+				debug: true
+			};
+			var shoe = SnowShoe(options);
+			shoe.should.have.property('debugUrl');
+			done();
+		});
+
+		it('the debug callback url should NOT be available if debugging is disabled', function (done) {
+			var options = {
+				API_KEY: 'FAKE_KEY',
+				APP_SECRET: 'FAKE_SECRET'
+			};
+			var shoe = SnowShoe(options);
+			shoe.should.not.have.property('debugUrl');
 			done();
 		});
 
