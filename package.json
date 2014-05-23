@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/xzela/node-snowshoe",
   "dependencies": {
-    "request": "2.36.x"
   },
   "devDependencies": {
     "mocha": "1.19.x",

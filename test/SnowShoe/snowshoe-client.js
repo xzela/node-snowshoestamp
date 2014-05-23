@@ -1,6 +1,6 @@
 var should = require('should'),
 	assert = require('assert'),
-	SnowShoe = require('../../lib/SnowShoe');
+	SnowShoeStamp = require('../../lib/SnowShoeStamp');
 
 describe('SnowShoe Client Unit Tests ', function () {
 	describe('Initialize the SnowShoe Client library ', function () {
@@ -10,7 +10,7 @@ describe('SnowShoe Client Unit Tests ', function () {
 
 		it('should thrown an error if no API key is supplied', function (done) {
 			(function () {
-				var shoe = SnowShoe();
+				var shoe = SnowShoeStamp();
 			}).should.throw();
 			done();
 		});
@@ -20,7 +20,7 @@ describe('SnowShoe Client Unit Tests ', function () {
 				var options = {
 					API_KEY: 'FAKE_KEY'
 				};
-				var shoe = SnowShoe(options);
+				var shoe = SnowShoeStamp(options);
 			}).should.throw();
 			done();
 		});
@@ -30,7 +30,7 @@ describe('SnowShoe Client Unit Tests ', function () {
 				API_KEY: 'FAKE_KEY',
 				APP_SECRET: 'FAKE_SECRET'
 			};
-			var shoe = SnowShoe(options);
+			var shoe = SnowShoeStamp(options);
 			shoe.apiUrl.should.equal('https://beta.snowshoestamp.com/api/v2');
 			done();
 		});
@@ -42,7 +42,7 @@ describe('SnowShoe Client Unit Tests ', function () {
 				APP_SECRET: 'FAKE_SECRET',
 				apiUrl: url
 			};
-			var shoe = SnowShoe(options);
+			var shoe = SnowShoeStamp(options);
 			shoe.apiUrl.should.equal(url);
 			done();
 		});
@@ -53,7 +53,7 @@ describe('SnowShoe Client Unit Tests ', function () {
 				APP_SECRET: 'FAKE_SECRET',
 				debug: true
 			};
-			var shoe = SnowShoe(options);
+			var shoe = SnowShoeStamp(options);
 			shoe.should.have.property('debugUrl');
 			done();
 		});
@@ -63,7 +63,7 @@ describe('SnowShoe Client Unit Tests ', function () {
 				API_KEY: 'FAKE_KEY',
 				APP_SECRET: 'FAKE_SECRET'
 			};
-			var shoe = SnowShoe(options);
+			var shoe = SnowShoeStamp(options);
 			shoe.should.not.have.property('debugUrl');
 			done();
 		});
