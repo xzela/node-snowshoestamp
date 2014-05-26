@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/xzela/node-snowshoestamp",
   "dependencies": {
+    "request": "2.36.x"
   },
   "devDependencies": {
     "mocha": "1.19.x",
